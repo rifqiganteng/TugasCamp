@@ -87,16 +87,7 @@ public class Robot {
                     this.direction = Direction.EAST;
                 }
                 break;
-        } //SWITCH
-//        if (movement.equals(FRONT)){
-//            this.postY --;
-//        } else if(movement.equals(RIGHT)){
-//            this.postY --;
-//        }else if(movement.equals(LEFT)){
-//            this.postX ++;
-//        }else if(movement.equals(BACK)){
-//            this.postY --;
-//        }
+        }
     }
 
     public char[] setCommands(String commands) {
