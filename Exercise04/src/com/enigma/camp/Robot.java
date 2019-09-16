@@ -67,6 +67,8 @@ public class Robot {
         }else if(direction.equals(Direction.WEST)){
             this.postX --;
             this.direction = Direction.SOUTH;
+        }else{
+            System.out.println("Your instruction is not recognice by system ");
         }
     }
 
@@ -83,6 +85,8 @@ public class Robot {
         }else if(direction.equals(Direction.WEST)){
             this.postX ++;
             this.direction = Direction.SOUTH;
+        }else {
+            System.out.println("Your instruction is not recognice by system ");
         }
     }
 
@@ -98,7 +102,6 @@ public class Robot {
 
             } else {
                 instruction(String.valueOf(commands[i]),this.direction);
-               //System.out.println(commands[i] + getPosition());
                 System.out.println(this.commands[i] + getPosition() + " " + this.direction);
                 if ((i + 1) % 3 == 0) {
                     daya = daya - 1;
@@ -111,10 +114,11 @@ public class Robot {
 
     public String print() {
         return "Robot{" +
-                "postX=" + postX +
-                ", postY=" + postY +
-                ", daya=" + daya +
-                ", commands=" + Arrays.toString(commands) +
+                "postX = " + postX +
+                ", postY = " + postY +
+                ", daya = " + daya +
+                ", commands = " + Arrays.toString(commands) +
+                ", commands = " + direction +
                 '}';
     }
 
