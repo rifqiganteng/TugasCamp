@@ -1,5 +1,4 @@
 package com.enigma.camp;
-
 import java.util.Arrays;
 
 public class Robot {
@@ -32,61 +31,58 @@ public class Robot {
 
     //untuk menentukan perintah atau instruksi robot atom dan akan berpengaaruh ke koordinat
     public void instruction(String movement, Direction direction) {
-        switch (movement) {
+        switch (movement){
             case RIGHT:
-                if (movement.equals(RIGHT)) {
-                    if (String.valueOf(direction).equals("NORTH")) {
-                        this.direction = Direction.EAST;
-                    } else if (String.valueOf(direction).equals("EAST")) {
-                        this.direction = Direction.SOUTH;
-                    } else if (String.valueOf(direction).equals("SOUTH")) {
-                        this.direction = Direction.WEST;
-                    } else if (String.valueOf(direction).equals("WEST")) {
-                        this.direction = Direction.NORTH;
-                    }
-                }
+                turnRight();
                 break;
             case LEFT:
-                if (String.valueOf(direction).equals("NORTH")) {
-                    this.direction = Direction.WEST;
-                } else if (String.valueOf(direction).equals("WEST")) {
-                    this.direction = Direction.SOUTH;
-                } else if (String.valueOf(direction).equals("SOUTH")) {
-                    this.direction = Direction.EAST;
-                } else if (String.valueOf(direction).equals("EAST")) {
-                    this.direction = Direction.NORTH;
-                }
+                turnLeft();
                 break;
             case FRONT:
-                if (String.valueOf(direction).equals("NORTH")) {
-                    this.direction = Direction.NORTH;
-                    this.postY++;
-                } else if (String.valueOf(direction).equals("WEST")) {
-                    this.direction = Direction.WEST;
-                    this.postY--;
-                } else if (String.valueOf(direction).equals("SOUTH")) {
-                    this.direction = Direction.SOUTH;
-                    this.postY--;
-                } else if (String.valueOf(direction).equals("EAST")) {
-                    this.direction = Direction.EAST;
-                    this.postY++;
-                }
+                forward();
                 break;
             case BACK:
-                if (String.valueOf(direction).equals("NORTH")) {
-                    this.postY = this.postY - 1;
-                    this.direction = Direction.NORTH;
-                } else if (String.valueOf(direction).equals("WEST")) {
-                    this.postX++;
-                    this.direction = Direction.WEST;
-                } else if (String.valueOf(direction).equals("SOUTH")) {
-                    this.postY++;
-                    this.direction = Direction.SOUTH;
-                } else if (String.valueOf(direction).equals("EAST")) {
-                    this.postX--;
-                    this.direction = Direction.EAST;
-                }
+                back();
                 break;
+        }
+    }
+
+    public void turnRight(){
+        this.direction = this.direction.right();
+    }
+    public void turnLeft(){
+        this.direction = this.direction.left();
+    }
+
+    public void forward(){
+        if (direction.equals(Direction.NORTH)){
+            this.postY ++;
+            this.direction = Direction.NORTH;
+        }else if(direction.equals(Direction.EAST)){
+            this.postX ++;
+            this.direction = Direction.EAST;
+        }else if (direction.equals(Direction.SOUTH)){
+            this.postY --;
+            this.direction = Direction.SOUTH;
+        }else if(direction.equals(Direction.WEST)){
+            this.postX --;
+            this.direction = Direction.SOUTH;
+        }
+    }
+
+    public void back(){
+        if (direction.equals(Direction.NORTH)){
+            this.postY --;
+            this.direction = Direction.NORTH;
+        }else if(direction.equals(Direction.EAST)){
+            this.postX --;
+            this.direction = Direction.EAST;
+        }else if (direction.equals(Direction.SOUTH)){
+            this.postY ++;
+            this.direction = Direction.SOUTH;
+        }else if(direction.equals(Direction.WEST)){
+            this.postX ++;
+            this.direction = Direction.SOUTH;
         }
     }
 
@@ -102,7 +98,7 @@ public class Robot {
 
             } else {
                 instruction(String.valueOf(commands[i]),this.direction);
-               // System.out.println(commands[i] + getPosition());
+               //System.out.println(commands[i] + getPosition());
                 System.out.println(this.commands[i] + getPosition() + " " + this.direction);
                 if ((i + 1) % 3 == 0) {
                     daya = daya - 1;

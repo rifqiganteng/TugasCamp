@@ -12,7 +12,7 @@ public class Main {
         String getF1=br.readLine();
         System.out.println("masukkan nilai F2");
         String getF2=br.readLine();
-        FighterJet  fighterJet = new FighterJet(Double.parseDouble(getF1),Double.parseDouble(getF2),0,0);
+        FighterJet  fighterJet = new FighterJet(Double.parseDouble(getF1),Double.parseDouble(getF2),0);
         fighterJet.angkatPesawat();
         if (Double.parseDouble(getF1) <= Double.parseDouble(getF2))
         {
@@ -23,13 +23,13 @@ public class Main {
             System.out.println(fighterJet.chooseEngine(speedEngineChoose));
         }
 
-
-
-
-
-
-
-
+        System.out.println("#### CHOOSE Air-launched missiles TO COMPLATE YOUR WEAPPON ####");
+        System.out.println("KH-35U             ==> Damage = 320 tj");
+        System.out.println("AGM-65 Maverick    ==> Damage = 220 tj");
+        System.out.println("Vympel R-27        ==> Damage = 100 tj");
+        System.out.println("AIM-9 P4           ==> Damage = 300 tj");
+        System.out.println("vAGM-142 Raptor    ==> Damage = 150 tj");
+        System.out.println("Raduga KS-1 Komet  ==> Damage = 200 tj");
 
     }
 }
