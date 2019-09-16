@@ -16,6 +16,7 @@ public class Robot {
     private final String RIGHT = "R";
     private final String LEFT = "L";
     private final String BACK = "B";
+    private final String EROR = "your input is not recognise by our system";
 
     //konstruktor
     public Robot(Integer x, Integer y, Direction direction) {
@@ -43,6 +44,10 @@ public class Robot {
                 break;
             case BACK:
                 back();
+                break;
+            default:
+                System.out.println(" your input is not recognise by our system");
+                System.out.println(" please check your onstruction");
                 break;
         }
     }
