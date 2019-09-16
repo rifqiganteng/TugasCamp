@@ -97,8 +97,8 @@ public class Robot {
     public void run() {
         for (int i = 0; i < commands.length; i++) {
             if (daya == 0) {
-                System.out.println(" Bensin Anda Sudah Habis ");
-                System.out.println("apakah anda mau beli bensin lagi");
+                System.out.println(" Batrey Anda Sudah Habis ");
+                System.out.println("apakah anda mengisi batrey lagi");
 
             } else {
                 instruction(String.valueOf(commands[i]),this.direction);
@@ -118,7 +118,7 @@ public class Robot {
                 ", postY = " + postY +
                 ", daya = " + daya +
                 ", commands = " + Arrays.toString(commands) +
-                ", commands = " + direction +
+                ", Arah = " + direction +
                 '}';
     }
 
