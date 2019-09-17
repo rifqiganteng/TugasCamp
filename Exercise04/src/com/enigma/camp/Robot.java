@@ -68,7 +68,7 @@ public class Robot {
             this.direction = Direction.EAST;
         }else if (direction.equals(Direction.SOUTH)){
             this.postY --;
-            this.direction = Direction.SOUTH;
+            this.direction   = Direction.SOUTH;
         }else if(direction.equals(Direction.WEST)){
             this.postX --;
             this.direction = Direction.SOUTH;
